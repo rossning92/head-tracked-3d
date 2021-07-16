@@ -1,0 +1,34 @@
+{
+  "name": "head-tracked-3d",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ross Ning <rossning92@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^6.0.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^3.1.0",
+    "ts-loader": "^9.2.3",
+    "typescript": "^4.3.5",
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "start": "webpack serve --mode development --devtool inline-source-map --hot",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@tensorflow-models/face-landmarks-detection": "^0.0.3",
+    "@tensorflow/tfjs-backend-webgl": "^3.8.0",
+    "@tensorflow/tfjs-converter": "^3.8.0",
+    "@tensorflow/tfjs-core": "^3.8.0",
+    "@types/three": "^0.130.0",
+    "seedrandom": "^3.0.5",
+    "three": "^0.130.1",
+    "tweakpane": "^3.0.3"
+  }
+}
