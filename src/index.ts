@@ -6,7 +6,7 @@ import { Pane } from "tweakpane";
 import { HeadTracker } from "./head-tracker";
 import "./main.css";
 import { random } from "./math-helper";
-import "./links";
+import "./links/links";
 
 const params = {
   headTrack: true,
@@ -25,7 +25,7 @@ const params = {
   // scaleZ: 6.7,
 };
 
-{
+function setupUI() {
   const paneDiv = document.createElement("div");
   paneDiv.style.position = "fixed";
   paneDiv.style.left = "0";
@@ -46,6 +46,8 @@ const params = {
   pane.addInput(params, "scaleY", { min: 0.1, max: 5 });
   pane.addInput(params, "scaleZ", { min: 0.1, max: 10 });
 }
+
+setupUI();
 
 const scene = new THREE.Scene();
 
@@ -207,8 +209,6 @@ const render = () => {
     100
   );
 
-  // updateFog(scene);
-
   renderer.render(scene, camera);
 };
 
@@ -278,15 +278,6 @@ addMiku(mainScene, {
   y: -0.25,
   z: 2,
 });
-
-function updateFog(scene: THREE.Scene) {
-  const color = "black";
-
-  if (!scene.fog) {
-    scene.fog = new THREE.FogExp2(color, 0.05);
-    scene.background = new THREE.Color(color);
-  }
-}
 
 async function loadTexture(url: string): Promise<THREE.Texture> {
   return new Promise((resolve, reject) => {
